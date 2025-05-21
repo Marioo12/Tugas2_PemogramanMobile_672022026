@@ -18,15 +18,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Inset padding untuk layout utama
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Event klik tombol register
         binding.btnRegister.setOnClickListener {
             val fullname = binding.editTextFullname.text.toString()
             val username = binding.editTextUsername.text.toString()

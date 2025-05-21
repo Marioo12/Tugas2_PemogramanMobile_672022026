@@ -15,15 +15,12 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Gunakan binding untuk layout Home, bukan Login
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ambil SharedPreferences
         sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val fullname = sharedPreferences.getString("fullname", "User")
 
-        // Tampilkan nama pengguna di TextView
         binding.textWelcome.text = "Welcome\n$fullname"
     }
 }
